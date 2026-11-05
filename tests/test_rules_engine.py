@@ -203,12 +203,40 @@ def test_safety_keyword_overrides_ai_misclassification(triage):
 
 
 @pytest.mark.parametrize(
+    "word",
+    [
+        "irritation", "irritated", "irritating", "burned", "burning", "blister", "blistered",
+        "itch", "itching", "itchy", "rashes", "allergic", "allergies",
+    ],
+)
+def test_safety_keyword_variants_trigger_screen(rules, word):
+    assert find_safety_keywords(f"the band made my wrist {word}", rules.escalation.safety.keywords)
+
+
+def test_skin_irritation_message_escalates_even_if_ai_misses_it(triage):
+    d = triage("M0014", "warranty_replacement", "strap",
+               message="my wrist has skin irritation from the band")
+    assert d.decision == "escalate_safety"
+    assert d.priority == "urgent"
+    assert d.assigned_queue == "trust_safety"
+    assert "safety_keyword" in d.escalation_reasons
+
+
+def test_strap_irritating_skin_escalates_even_if_ai_misses_it(triage):
+    d = triage("M0014", "warranty_replacement", "strap",
+               message="the strap is irritating my skin")
+    assert d.decision == "escalate_safety"
+    assert d.priority == "urgent"
+    assert "safety_keyword" in d.escalation_reasons
+
+
+@pytest.mark.parametrize(
     "message, expected",
     [
         ("It's BURNING hot", ["burning"]),
         ("my wrist feels hot to the touch", ["hot to the touch"]),
         ("love the burnished finish", []),
-        ("strap is a bit irritating to put on", []),
+        ("strap is a bit irritating to put on", ["irritating"]),
     ],
 )
 def test_safety_keywords_match_whole_words(rules, message, expected):

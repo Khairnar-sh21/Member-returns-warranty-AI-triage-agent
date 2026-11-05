@@ -91,15 +91,23 @@ escalation:
     # Keyword backstop: if any of these whole words/phrases appear in the
     # message (case-insensitive), the case is treated as a safety concern even
     # if the AI classified it differently.
+    # We prefer false alarms over missed safety cases: an unneeded escalation
+    # costs a few agent minutes, a missed injury report is a real risk. When
+    # in doubt, add the word.
     keywords:
       - injury
       - injured
       - rash
+      - rashes
       - irritation
       - irritated
+      - irritating
+      - itch
+      - itching
       - itchy
       - blister
       - blisters
+      - blistered
       - burn
       - burns
       - burned
@@ -112,6 +120,7 @@ escalation:
       - smoke
       - allergic
       - allergy
+      - allergies
       - bleeding
 
   queue: human_review
