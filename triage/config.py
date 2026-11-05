@@ -20,6 +20,7 @@ RULES_PATH = PROJECT_ROOT / "rules.yaml"
 DATA_DIR = PROJECT_ROOT / "data"
 
 Region = Literal["US", "CA", "UK", "EU", "AU"]
+MembershipStatus = Literal["active", "past_due", "cancelled"]
 Warehouse = Literal["US", "EU", "APAC"]
 Priority = Literal["low", "normal", "high", "urgent"]
 Category = Literal[
@@ -52,15 +53,15 @@ class ReturnRemorseRules(_Strict):
 class ReplacementLimit(_Strict):
     max_replacements: int = Field(ge=0)
     rolling_window_months: int = Field(gt=0)
-    over_limit_action: str
+    over_limit_action: Literal["manual_review"]
 
 
 class WarrantyRules(_Strict):
     default_months: int = Field(gt=0)
     months_by_region: dict[Region, int] = {}
-    required_membership_status: Literal["active", "past_due", "cancelled"]
-    past_due_action: str
-    cancelled_action: str
+    required_membership_status: MembershipStatus
+    past_due_action: Literal["resolve_billing_first", "not_eligible"]
+    cancelled_action: Literal["resolve_billing_first", "not_eligible"]
     replacement_limit: ReplacementLimit
     queue: str
 
