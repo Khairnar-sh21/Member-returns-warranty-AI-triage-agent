@@ -1,0 +1,142 @@
+# =============================================================================
+# PulseBand Member Returns & Warranty Policy  (UNOFFICIAL CONCEPT — synthetic)
+# -----------------------------------------------------------------------------
+# This file is the single source of truth for every business threshold the
+# triage agent uses. The rules engine reads it at startup; no code changes are
+# needed to adjust a policy. Edit a number, save, and re-run.
+#
+# The AI model never reads this file and never makes eligibility decisions.
+# It only classifies the member's message. These rules decide the outcome.
+# =============================================================================
+
+policy:
+  version: "2026.11-demo"
+  # Fixed "today" for the demo so every result (and the eval accuracy) is
+  # reproducible no matter when the app is opened. Set to null to use the
+  # real current date.
+  as_of_date: "2026-11-05"
+
+# -----------------------------------------------------------------------------
+# Change-of-mind ("remorse") returns
+# -----------------------------------------------------------------------------
+return_remorse:
+  window_days: 30              # days after delivery; day 30 is still eligible
+  queue: returns_ops
+
+# -----------------------------------------------------------------------------
+# Warranty replacements (hardware defects)
+# -----------------------------------------------------------------------------
+warranty:
+  default_months: 12           # months after delivery; last day is eligible
+  months_by_region:            # regional overrides (consumer law)
+    EU: 24
+    UK: 24
+  required_membership_status: active
+  # What to do when the membership is not active:
+  past_due_action: resolve_billing_first   # route to billing, hold the RMA
+  cancelled_action: not_eligible
+  replacement_limit:
+    max_replacements: 2        # warranty replacements allowed...
+    rolling_window_months: 12  # ...within this rolling window
+    over_limit_action: manual_review
+  queue: warranty_ops
+
+# -----------------------------------------------------------------------------
+# Troubleshooting-first
+# Common, usually-fixable issues get guided troubleshooting before any RMA,
+# unless the member says they already tried the standard steps.
+# -----------------------------------------------------------------------------
+troubleshooting_first:
+  sub_categories:
+    - charging
+    - sync
+    - bluetooth
+  skip_if_member_already_troubleshot: true
+  queue: tier1_support
+
+# -----------------------------------------------------------------------------
+# Shipping & delivery
+# -----------------------------------------------------------------------------
+shipping:
+  # Replace a package with no delivery scan once MORE than this many business
+  # days (Mon–Fri) have passed since the order date.
+  lost_package_business_days: 10
+  queue: logistics
+
+# -----------------------------------------------------------------------------
+# Billing & membership
+# -----------------------------------------------------------------------------
+billing:
+  queue: billing
+  allow_rma: false             # billing issues never create a return/RMA
+
+# -----------------------------------------------------------------------------
+# Escalation to a human agent
+# Any one of these sends the case to a person instead of automating it.
+# -----------------------------------------------------------------------------
+escalation:
+  min_confidence: 0.70         # below this AI confidence → human review
+
+  angry_high_value:
+    sentiments: [angry]
+    plans: [annual]            # annual members are treated as high-value
+
+  possible_fraud:
+    min_prior_cases: 3         # this many prior cases...
+    window_days: 90            # ...within this many days before today
+
+  safety:
+    priority: urgent
+    queue: trust_safety
+    # Keyword backstop: if any of these whole words/phrases appear in the
+    # message (case-insensitive), the case is treated as a safety concern even
+    # if the AI classified it differently.
+    keywords:
+      - injury
+      - injured
+      - rash
+      - irritation
+      - irritated
+      - itchy
+      - blister
+      - blisters
+      - burn
+      - burns
+      - burned
+      - burnt
+      - burning
+      - overheating
+      - hot to the touch
+      - swelling
+      - swollen
+      - smoke
+      - allergic
+      - allergy
+      - bleeding
+
+  queue: human_review
+
+# -----------------------------------------------------------------------------
+# Warehouse routing for replacements (member region → fulfilment warehouse)
+# -----------------------------------------------------------------------------
+routing:
+  region_to_warehouse:
+    US: US
+    CA: US
+    UK: EU
+    EU: EU
+    AU: APAC
+
+# -----------------------------------------------------------------------------
+# Default priority by category (escalation rules may raise it)
+# Levels, lowest to highest: low, normal, high, urgent
+# -----------------------------------------------------------------------------
+priority:
+  default_by_category:
+    troubleshooting: normal
+    warranty_replacement: normal
+    return_remorse: low
+    shipping_delivery: high
+    billing_membership: high
+    safety_concern: urgent
+    other: low

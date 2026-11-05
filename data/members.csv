@@ -1,0 +1,61 @@
+member_id,name,email,country,region,membership_status,membership_start_date,plan
+M0001,Maya Patel,maya.patel@example.com,United States,US,active,2026-06-02,annual
+M0002,Lukas Becker,lukas.becker@example.com,Germany,EU,active,2026-10-21,monthly
+M0003,Jordan Reyes,jordan.reyes@example.com,United States,US,active,2026-10-01,monthly
+M0004,Priya Shah,priya.shah@example.com,United States,US,active,2026-10-01,monthly
+M0005,Oliver Hughes,oliver.hughes@example.com,United Kingdom,UK,active,2025-05-01,annual
+M0006,Ethan Brooks,ethan.brooks@example.com,United States,US,active,2025-10-01,monthly
+M0007,Sofia Martinez,sofia.martinez@example.com,United States,US,past_due,2026-07-02,monthly
+M0008,Chloe Nguyen,chloe.nguyen@example.com,Australia,AU,active,2026-01-02,annual
+M0009,Liam Tremblay,liam.tremblay@example.com,Canada,CA,active,2026-10-16,monthly
+M0010,Ava Wilson,ava.wilson@example.com,United States,US,active,2026-10-28,annual
+M0011,Daniel Kim,daniel.kim@example.com,United States,US,active,2026-02-27,annual
+M0012,Camille Laurent,camille.laurent@example.com,France,EU,active,2026-05-02,monthly
+M0013,Noah de Vries,noah.vries@example.com,Netherlands,EU,cancelled,2026-04-02,monthly
+M0014,Grace O'Connor,grace.oconnor@example.com,Ireland,EU,active,2026-08-02,annual
+M0015,Marcus Johnson,marcus.johnson@example.com,United States,US,active,2025-11-01,monthly
+M0016,Emily Carter,emily.carter@example.com,United States,US,active,2025-10-31,monthly
+M0017,Ben Taylor,ben.taylor@example.com,Australia,AU,active,2026-10-22,monthly
+M0018,Giulia Rossi,giulia.rossi@example.com,Italy,EU,active,2024-10-02,annual
+M0019,Eugenia Caracciolo,eugenia.caracciolo@example.com,Italy,EU,active,2026-01-24,monthly
+M0020,Floortje Heere,floortje.heere@example.com,Netherlands,EU,active,2025-09-27,annual
+M0021,Danielle Johnson,danielle.johnson@example.com,Australia,AU,active,2024-05-10,annual
+M0022,Ayden Schellekens,ayden.schellekens@example.com,Netherlands,EU,active,2024-10-20,monthly
+M0023,Danielle Johnson,danielle.johnson2@example.com,United States,US,active,2024-11-20,monthly
+M0024,Joshua Walker,joshua.walker@example.com,United States,US,active,2026-02-02,monthly
+M0025,Joshua Walker,joshua.walker2@example.com,Australia,AU,active,2025-12-28,monthly
+M0026,Jill Rhodes,jill.rhodes@example.com,United States,US,active,2024-12-03,monthly
+M0027,Liam Nek,liam.nek@example.com,Netherlands,EU,active,2025-11-10,monthly
+M0028,Patricia Miller,patricia.miller@example.com,United States,US,active,2024-07-01,monthly
+M0029,Jill Rhodes,jill.rhodes2@example.com,Australia,AU,past_due,2025-10-27,annual
+M0030,Lucie Marie,lucie.marie@example.com,France,EU,active,2025-02-21,monthly
+M0031,Robert Johnson,robert.johnson@example.com,United States,US,active,2026-02-13,annual
+M0032,André Traore,andre.traore@example.com,France,EU,active,2025-01-12,monthly
+M0033,Megan Denning,megan.denning@example.com,Ireland,EU,active,2025-01-30,annual
+M0034,Ruth Griffiths,ruth.griffiths@example.com,United Kingdom,UK,active,2024-04-05,monthly
+M0035,Jeffery Wagner,jeffery.wagner@example.com,United States,US,past_due,2026-02-24,monthly
+M0036,Anthony Gonzalez,anthony.gonzalez@example.com,United States,US,cancelled,2024-04-07,monthly
+M0037,Debra Gardner,debra.gardner@example.com,United States,US,active,2026-01-07,annual
+M0038,Jeffrey Lawrence,jeffrey.lawrence@example.com,United States,US,active,2025-06-30,monthly
+M0039,Ben Kinnear,ben.kinnear@example.com,Ireland,EU,cancelled,2026-07-10,monthly
+M0040,Lisa Smith,lisa.smith@example.com,United States,US,active,2025-10-18,annual
+M0041,Alfio Leone,alfio.leone@example.com,Italy,EU,active,2024-07-29,monthly
+M0042,Linda Wolfe,linda.wolfe@example.com,United States,US,active,2024-03-18,annual
+M0043,Henry Smith,henry.smith@example.com,United Kingdom,UK,cancelled,2026-05-11,monthly
+M0044,Matthew Moore,matthew.moore@example.com,United States,US,cancelled,2024-11-26,monthly
+M0045,Susan Rogers,susan.rogers@example.com,United States,US,cancelled,2026-04-07,annual
+M0046,Christopher Davis,christopher.davis@example.com,United States,US,active,2024-06-13,annual
+M0047,Patricia Miller,patricia.miller2@example.com,Australia,AU,active,2026-04-01,annual
+M0048,Bradley Newman,bradley.newman@example.com,United Kingdom,UK,active,2024-06-07,annual
+M0049,Danielle Johnson,danielle.johnson3@example.com,Canada,CA,past_due,2024-10-31,monthly
+M0050,Robert Johnson,robert.johnson2@example.com,Australia,AU,active,2026-05-11,annual
+M0051,Melanie Munoz,melanie.munoz@example.com,United States,US,active,2025-10-20,annual
+M0052,Lindsay Blair,lindsay.blair@example.com,United States,US,active,2024-06-03,monthly
+M0053,Sian Cox,sian.cox@example.com,United Kingdom,UK,active,2025-07-15,monthly
+M0054,Feliciana Cantón,feliciana.canton@example.com,Spain,EU,active,2025-11-17,monthly
+M0055,Gioele Garozzo,gioele.garozzo@example.com,Italy,EU,active,2024-02-27,monthly
+M0056,Amanda Dudley,amanda.dudley@example.com,United States,US,active,2024-12-20,annual
+M0057,Nicholas Arnold,nicholas.arnold@example.com,United States,US,active,2024-07-30,monthly
+M0058,Joshua Walker,joshua.walker3@example.com,Canada,CA,active,2024-10-23,annual
+M0059,Jeffery Wagner,jeffery.wagner2@example.com,Australia,AU,active,2024-04-07,monthly
+M0060,Elladio Camicione,elladio.camicione@example.com,Italy,EU,active,2024-09-06,monthly

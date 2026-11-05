@@ -1,0 +1,8 @@
+# Runtime dependencies (installed by Streamlit Community Cloud)
+streamlit==1.51.0
+pandas==2.3.3
+pydantic==2.12.4
+plotly==6.4.0
+PyYAML==6.0.3
+anthropic==0.72.0
+python-dotenv==1.2.1
