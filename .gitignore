@@ -11,6 +11,7 @@ __pycache__/
 
 # Design source files (kept local)
 design/
+Desktop web app for portfolio/
 *.zip
 
 # OS / editors
