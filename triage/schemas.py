@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field, field_validator
@@ -83,6 +83,52 @@ class Decision(BaseModel):
     next_action: str
     reason_codes: list[str]
     trace: list[RuleResult]
+    facts: dict[str, str] = {}  # policy facts the reply may quote (dates, windows)
     fulfillment: FulfillmentPlan | None
     policy_version: str
     as_of_date: date
+
+
+# -----------------------------------------------------------------------------
+# Business outputs (what downstream systems would receive)
+# -----------------------------------------------------------------------------
+
+
+class SupportCase(BaseModel):
+    """CRM case (Salesforce-style). rma_id links it to the ERP record."""
+
+    case_id: str
+    member_id: str | None
+    channel: str
+    category: Category
+    sub_category: str
+    priority: Priority
+    sentiment: Sentiment
+    decision: DecisionCode
+    reason_codes: list[str]
+    next_action: str
+    assigned_queue: str
+    automated: bool
+    rma_id: str | None
+    policy_version: str
+    created_at: datetime
+
+
+class RMAOrder(BaseModel):
+    """Return/replacement order (NetSuite-style). case_id links it back to the CRM."""
+
+    rma_id: str
+    case_id: str
+    rma_type: Literal["warranty_replacement", "remorse_return", "lost_package_replacement"]
+    original_order_id: str
+    sku: str
+    replacement_sku: str | None
+    warehouse: Warehouse
+    return_label_required: bool
+    ship_to_country: str
+
+
+class MemberReply(BaseModel):
+    subject: str
+    body: str
+    guardrail_triggered: bool = False

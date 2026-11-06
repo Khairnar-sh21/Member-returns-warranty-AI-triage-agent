@@ -1,4 +1,4 @@
-"""Try the live classifier + rules engine from the terminal.
+"""Run one message through the full live pipeline from the terminal.
 
   python scripts/classify.py "my band stopped charging after 5 months" --member M0001
 """
@@ -11,10 +11,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from triage.classifier import classify  # noqa: E402
-from triage.data import get_store  # noqa: E402
 from triage.llm import LLMError, get_provider  # noqa: E402
-from triage.rules_engine import evaluate  # noqa: E402
+from triage.outputs import DECISION_LABELS  # noqa: E402
+from triage.pipeline import run_triage  # noqa: E402
 
 
 def main() -> int:
@@ -32,20 +31,23 @@ def main() -> int:
         print("No API key found. Add GEMINI_API_KEY to .env (see .env.example).")
         return 1
 
-    result = classify(args.message, provider)
-    print(f"\n{result.provider}/{result.model} · {result.status} · "
-          f"{result.attempts} attempt(s) · {result.latency_ms} ms")
-    if result.error:
-        print(f"⚠ {result.error}\n  detail: {result.error_detail}")
-    print(result.classification.model_dump_json(indent=2))
+    result = run_triage(args.message, args.member, provider)
+    c, d = result.classification, result.decision
+    print(f"\n{c.provider}/{c.model} · {c.status} · {c.attempts} attempt(s) · {c.latency_ms} ms")
+    if c.error:
+        print(f"⚠ {c.error}\n  detail: {c.error_detail}")
+    print(c.classification.model_dump_json(indent=2))
 
-    decision = evaluate(result.classification, args.message, get_store().get_context(args.member))
-    print(f"\nDecision: {decision.decision}  ·  "
-          f"{'Automated' if decision.automated else 'Escalated to human'}  ·  "
-          f"queue={decision.assigned_queue}  ·  priority={decision.priority}")
-    for r in decision.trace:
+    print(f"\n{DECISION_LABELS[d.decision]}  ·  "
+          f"{'Automated' if d.automated else 'Escalated to human'}  ·  "
+          f"queue={d.assigned_queue}  ·  priority={d.priority}")
+    for r in d.trace:
         print(f"  [{r.status:4}] {r.name}: {r.detail}")
-    print(f"Next action: {decision.next_action}")
+
+    print("\n--- Case ---\n" + result.case.model_dump_json(indent=2))
+    if result.rma:
+        print("\n--- RMA ---\n" + result.rma.model_dump_json(indent=2))
+    print(f"\n--- Reply ---\nSubject: {result.reply.subject}\n\n{result.reply.body}")
     return 0
 
 

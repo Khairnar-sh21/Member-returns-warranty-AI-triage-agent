@@ -9,6 +9,10 @@ __pycache__/
 .venv/
 .tools/
 
+# Design source files (kept local)
+design/
+*.zip
+
 # OS / editors
 .DS_Store
 .vscode/

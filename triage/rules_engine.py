@@ -15,7 +15,7 @@ returns the same decision. Evaluation order:
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date, timedelta
 
 import numpy as np
@@ -45,6 +45,7 @@ class _Outcome:
     queue: str
     next_action: str
     fulfillment: FulfillmentPlan | None = None
+    facts: dict[str, str] = field(default_factory=dict)
 
 
 class _Trace:
@@ -146,6 +147,7 @@ def evaluate(
         next_action=next_action,
         reason_codes=reason_codes,
         trace=trace.results,
+        facts=policy.facts,
         fulfillment=fulfillment,
         policy_version=rules.policy.version,
         as_of_date=today,
@@ -233,7 +235,8 @@ def _hardware(clf, ctx, rules, today, trace) -> _Outcome:
                   "they've tried the standard steps. Send guided troubleshooting first.")
         return _Outcome("send_troubleshooting", ts.queue,
                         f"Send the guided {issue} troubleshooting steps; if they don't work, "
-                        "the member can reply and we'll check replacement eligibility.")
+                        "the member can reply and we'll check replacement eligibility.",
+                        facts={"issue": clf.sub_category})
     if needs_troubleshooting:
         trace.add("troubleshooting_first", "policy", "Troubleshooting first", "pass",
                   "TROUBLESHOOTING_DONE",
@@ -259,6 +262,12 @@ def _warranty(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _
     months = rules.warranty_months_for(m.region)
     expires = order.delivered_date + relativedelta(months=months)
     age_days = (today - order.delivered_date).days
+    facts = {
+        "order_id": order.order_id,
+        "delivered_date": _fmt(order.delivered_date),
+        "warranty_months": str(months),
+        "warranty_expires": _fmt(expires),
+    }
     in_warranty = trace.add(
         "warranty_period", "policy", f"Warranty period ({months} months, {m.region})",
         "pass" if today <= expires else "fail",
@@ -299,25 +308,27 @@ def _warranty(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _
     if not in_warranty:
         return _Outcome("deny_out_of_warranty", w.queue,
                         "Explain the device is outside warranty and offer the member upgrade/"
-                        "discounted replacement options.")
+                        "discounted replacement options.", facts=facts)
     if not membership_ok:
         action = w.past_due_action if status == "past_due" else w.cancelled_action
         if action == "resolve_billing_first":
             return _Outcome("hold_resolve_billing_first", rules.billing.queue,
                             "Hold the replacement. Ask the member to update payment; once the "
-                            "membership is active, the warranty claim can proceed.")
+                            "membership is active, the warranty claim can proceed.", facts=facts)
         return _Outcome("deny_membership_inactive", w.queue,
                         "Explain warranty replacements need an active membership and share "
-                        "how to reactivate.")
+                        "how to reactivate.", facts=facts)
     if not under_limit:
         return _Outcome("manual_review_replacement_limit", rules.escalation.queue,
-                        "Warranty specialist to review replacement history before approving.")
+                        "Warranty specialist to review replacement history before approving.",
+                        facts=facts)
 
     return _Outcome(
         "approve_warranty_replacement", w.queue,
         "Create a warranty RMA: ship a like-for-like replacement and email a prepaid return "
         "label for the faulty device.",
         _plan("warranty_replacement", order, ctx, rules, replacement=True, return_label=True),
+        facts=facts,
     )
 
 
@@ -332,6 +343,12 @@ def _return(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _Ou
                         "Agent to check the order status and help the member cancel if needed.")
 
     days = (today - order.delivered_date).days
+    facts = {
+        "order_id": order.order_id,
+        "delivered_date": _fmt(order.delivered_date),
+        "days_since_delivery": str(days),
+        "return_window_days": str(r.window_days),
+    }
     ok = trace.add(
         "return_window", "policy", f"Return window ({r.window_days} days)",
         "pass" if days <= r.window_days else "fail",
@@ -342,11 +359,12 @@ def _return(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _Ou
     if not ok:
         return _Outcome("deny_return_window_closed", r.queue,
                         f"Explain the {r.window_days}-day return window has passed; mention "
-                        "warranty support if the device is faulty.")
+                        "warranty support if the device is faulty.", facts=facts)
     return _Outcome(
         "approve_return", r.queue,
         "Create a return RMA: email a prepaid return label; refund once the device is received.",
         _plan("remorse_return", order, ctx, rules, replacement=False, return_label=True),
+        facts=facts,
     )
 
 
@@ -364,10 +382,21 @@ def _shipping(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _
                   f"Order {order.order_id} has a delivery scan on {_fmt(order.delivered_date)}. "
                   "A delivered-but-missing package needs a carrier investigation.")
         return _Outcome("investigate_delivery", s.queue,
-                        "Logistics agent to open a carrier trace and contact the member.")
+                        "Logistics agent to open a carrier trace and contact the member.",
+                        facts={"order_id": order.order_id,
+                               "delivered_date": _fmt(order.delivered_date)})
 
     elapsed = int(np.busday_count(order.order_date, today))
     lost = elapsed > s.lost_package_business_days
+    eligible_from = np.busday_offset(
+        order.order_date, s.lost_package_business_days + 1, roll="forward"
+    ).astype(date)
+    facts = {
+        "order_id": order.order_id,
+        "order_date": _fmt(order.order_date),
+        "business_days_elapsed": str(elapsed),
+        "replacement_eligible_from": _fmt(eligible_from),
+    }
     trace.add(
         "lost_package", "policy", f"Lost package (> {s.lost_package_business_days} business days)",
         "pass" if lost else "fail",
@@ -379,12 +408,13 @@ def _shipping(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _
         remaining = s.lost_package_business_days - elapsed + 1
         return _Outcome("wait_for_delivery", s.queue,
                         f"Share tracking status; if there's still no delivery scan in "
-                        f"{remaining} business day(s), a replacement will be sent.")
+                        f"{remaining} business day(s), a replacement will be sent.", facts=facts)
     return _Outcome(
         "approve_lost_package_replacement", s.queue,
         "Create a replacement RMA for the lost package (no return label needed) and file a "
         "carrier claim.",
         _plan("lost_package_replacement", order, ctx, rules, replacement=True, return_label=False),
+        facts=facts,
     )
 
 
