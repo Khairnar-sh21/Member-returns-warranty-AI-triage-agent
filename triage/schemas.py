@@ -67,7 +67,7 @@ class RuleResult(BaseModel):
 
 
 class FulfillmentPlan(BaseModel):
-    """What the rules approved for shipping/returns; becomes the RMA in Phase 4."""
+    """What the rules approved for shipping/returns; becomes the RMAOrder."""
 
     rma_type: Literal["warranty_replacement", "remorse_return", "lost_package_replacement"]
     original_order_id: str

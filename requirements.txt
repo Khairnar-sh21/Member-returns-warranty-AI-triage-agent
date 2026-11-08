@@ -4,6 +4,7 @@ pandas==2.3.3
 pydantic==2.14.3
 plotly==6.4.0
 PyYAML==6.0.3
+python-dateutil==4.0.0
 google-genai==2.34.0   # default LLM provider (Gemini free tier)
 anthropic==0.72.0      # optional provider (LLM_PROVIDER=anthropic)
 python-dotenv==1.2.1
