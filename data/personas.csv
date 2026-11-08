@@ -1,15 +1,15 @@
 member_id,name,scenario_note
-M0001,Maya Patel,"Charging issue, 5 months in warranty → troubleshooting first"
+M0001,Maya Patel,"Charging issue, already tried cable + reset → warranty replacement approved"
 M0002,Lukas Becker,Delivered 12 days ago → remorse return in window
 M0003,Jordan Reyes,Delivered exactly 30 days ago → last eligible return day
 M0004,Priya Shah,Delivered 31 days ago → return window just closed
-M0005,Oliver Hughes,Delivered 18 months ago → covered only by 24-month UK warranty
-M0006,Ethan Brooks,Delivered 13 months ago → outside 12-month US warranty
+M0005,Oliver Hughes,"Sync issue, already re-paired, 18 months in → UK 24-month warranty replacement approved"
+M0006,Ethan Brooks,Vague message → human review (account is also outside 12-month US warranty)
 M0007,Sofia Martinez,"Past-due membership, 4 months in → resolve billing before RMA"
 M0008,Chloe Nguyen,2 warranty replacements in last 12 months → manual review
 M0009,Liam Tremblay,No delivery scan after 14 business days → lost-package replacement
 M0010,Ava Wilson,In transit 6 business days → too early to replace
-M0011,Daniel Kim,"Annual member, billing dispute → billing queue (escalate if angry)"
+M0011,Daniel Kim,Duplicate membership charge → billing queue
 M0012,Camille Laurent,3 prior cases in last 90 days → possible-fraud escalation
 M0013,Noah de Vries,Cancelled membership → not eligible for warranty replacement
 M0014,Grace O'Connor,Use for safety scenarios (skin irritation) → urgent human review

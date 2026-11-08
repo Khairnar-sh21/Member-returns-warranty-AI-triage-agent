@@ -99,12 +99,50 @@ h1, h2, h3 {{ color: {INK}; }}
 .pb-th {{ background:#F3F5F6; font-size:13px; color:{MUTED}; font-weight:600; border-top:none; }}
 
 .pb-side-brand {{ display:flex; align-items:center; gap:10px; }}
-.pb-side-logo {{ width:30px; height:30px; border-radius:8px; background:{TEAL}; }}
+.pb-side-logo {{ width:30px; height:30px; border-radius:8px; background:{TEAL}; display:flex;
+  align-items:center; justify-content:center; flex:none; }}
+.pb-side-logo svg {{ display:block; }}
 .pb-side-kicker {{ font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
   color:{MUTED}; }}
 .pb-meter {{ background:#fff; border:1px solid {LINE}; border-radius:10px; padding:14px 16px; }}
 .pb-meter-bar {{ height:6px; border-radius:3px; background:#E6EAEC; overflow:hidden; margin:8px 0 6px; }}
 .pb-meter-bar > div {{ height:100%; background:{TEAL}; }}
+
+.pb-flow {{ display:flex; gap:8px; align-items:stretch; }}
+.pb-flow-step {{ flex:1; min-width:0; border-radius:10px; padding:18px 18px 20px;
+  display:flex; flex-direction:column; gap:10px; }}
+.pb-flow-arrow {{ display:flex; align-items:center; color:{FAINT}; font-size:20px; flex:none; }}
+.pb-principle {{ text-align:center; font-size:30px; font-weight:600; padding:28px 0; color:#0A3F3F; }}
+.pb-why {{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }}
+.pb-split {{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }}
+.pb-bound {{ display:flex; align-items:flex-start; gap:10px; font-size:15px; line-height:1.5; margin:8px 0; }}
+.pb-bound-icon {{ width:22px; height:22px; border-radius:11px; display:inline-flex; align-items:center;
+  justify-content:center; font-size:12px; font-weight:700; flex:none; margin-top:1px; }}
+.pb-bound-allow {{ background:#E5F3EA; color:#1D6B3F; }}
+.pb-bound-deny {{ background:#F6EDEC; color:#C45C52; }}
+.pb-policy-head {{ display:flex; justify-content:space-between; align-items:baseline; gap:12px;
+  margin:32px 0 12px; }}
+.pb-policy-row {{ grid-template-columns:1.2fr 2.2fr 2fr; }}
+.pb-policy-if, .pb-policy-then {{ }}
+
+@media (max-width: 900px) {{
+  section[data-testid="stSidebar"] {{ width: unset !important; min-width: unset !important; }}
+  .block-container {{ padding: 1rem 1.1rem 2.5rem; }}
+  .pb-title {{ font-size:24px; }}
+  .pb-principle {{ font-size:22px; padding:20px 0; }}
+  .pb-flow {{ flex-direction:column; }}
+  .pb-flow-arrow {{ transform:rotate(90deg); align-self:center; height:16px; }}
+  .pb-why, .pb-split {{ grid-template-columns:1fr; }}
+  .pb-banner {{ flex-direction:column; align-items:flex-start; }}
+  .pb-kv {{ grid-template-columns:1fr; gap:2px; padding:8px 0; }}
+  .pb-policy-head {{ flex-direction:column; align-items:flex-start; }}
+  .pb-th.pb-policy-row {{ display:none; }}
+  .pb-policy-row {{ grid-template-columns:1fr; gap:4px; padding:14px 16px; }}
+  .pb-policy-if::before, .pb-policy-then::before {{
+    content: attr(data-label) " · "; font-weight:600; color:{MUTED}; font-family: inherit; }}
+  .pb-rule {{ grid-template-columns:28px minmax(0,1fr); }}
+  .pb-rule-code {{ grid-column:2; padding-top:0; }}
+}}
 </style>
 """
 

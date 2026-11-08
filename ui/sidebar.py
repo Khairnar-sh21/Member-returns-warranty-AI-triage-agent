@@ -17,7 +17,11 @@ def render() -> None:
     rules = get_rules()
     with st.sidebar:
         html(
-            '<div class="pb-side-brand"><div class="pb-side-logo"></div>'
+            '<div class="pb-side-brand"><div class="pb-side-logo" aria-hidden="true">'
+            '<svg width="30" height="30" viewBox="0 0 30 30" fill="none">'
+            '<path d="M3.5 16.5 H8 L10.5 8 L14.5 22.5 L17.5 11 L20 16.5 H26.5" '
+            'stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>'
+            '</svg></div>'
             '<div class="pb-side-kicker">PulseBand</div></div>'
             '<div style="font-size:22px;font-weight:700;line-height:1.2;margin-top:10px">'
             'Member Triage Agent</div>'

@@ -22,7 +22,7 @@ st.set_page_config(
     page_title="PulseBand Triage Agent · Unofficial concept",
     page_icon="🟢",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 
