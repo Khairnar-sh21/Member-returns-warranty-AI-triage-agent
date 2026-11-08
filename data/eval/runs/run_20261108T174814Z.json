@@ -1,0 +1,773 @@
+{
+  "run_id": "run_20261108T174814Z",
+  "batch_id": "batch_20261108T174003Z",
+  "run_date": "2026-11-08T17:48:14+00:00",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_version": "classifier_v1",
+  "policy_version": "2026.11-demo",
+  "pace_seconds": 8.0,
+  "duration_seconds": 233.1,
+  "classifications": {
+    "TC01": {
+      "classification": {
+        "category": "troubleshooting",
+        "sub_category": "sync",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "issue_onset": "since yesterday's update"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member reports a syncing issue that started after a recent app update, which clearly falls under troubleshooting."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 915,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"troubleshooting\",\n  \"sub_category\": \"sync\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"issue_onset\": \"since yesterday's update\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member reports a syncing issue that started after a recent app update, which clearly falls under troubleshooting.\"\n}"
+      ]
+    },
+    "TC02": {
+      "classification": {
+        "category": "troubleshooting",
+        "sub_category": "bluetooth",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is reporting a connectivity issue where Bluetooth keeps disconnecting every few minutes, which directly falls under troubleshooting."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1410,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"troubleshooting\",\n  \"sub_category\": \"bluetooth\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is reporting a connectivity issue where Bluetooth keeps disconnecting every few minutes, which directly falls under troubleshooting.\"\n}"
+      ]
+    },
+    "TC03": {
+      "classification": {
+        "category": "troubleshooting",
+        "sub_category": "battery_drain",
+        "sentiment": "frustrated",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is experiencing poor battery performance, indicated by sarcastic phrasing about the battery lasting only 6 hours."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1039,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"troubleshooting\",\n  \"sub_category\": \"battery_drain\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is experiencing poor battery performance, indicated by sarcastic phrasing about the battery lasting only 6 hours.\"\n}"
+      ]
+    },
+    "TC04": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "charging",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "steps_tried": "cleaned contacts, tried two different adapters, restarted"
+        },
+        "member_already_troubleshot": true,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is reporting a charging issue that persists despite trying multiple troubleshooting steps, so it falls under warranty replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1072,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"charging\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"steps_tried\": \"cleaned contacts, tried two different adapters, restarted\"\n  },\n  \"member_already_troubleshot\": true,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is reporting a charging issue that persists despite trying multiple troubleshooting steps, so it falls under warranty replacement.\"\n}"
+      ]
+    },
+    "TC05": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "cracked_casing",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "damage_type": "cracked casing",
+          "impact_stated": "never dropped it"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is reporting a physical hardware defect (cracked casing) and is likely seeking a warranty replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1000,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"cracked_casing\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"damage_type\": \"cracked casing\",\n    \"impact_stated\": \"never dropped it\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is reporting a physical hardware defect (cracked casing) and is likely seeking a warranty replacement.\"\n}"
+      ]
+    },
+    "TC06": {
+      "classification": {
+        "category": "other",
+        "sub_category": "feature_question",
+        "sentiment": "neutral",
+        "urgency": "low",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is asking a general usage question about whether the band can be worn in a sauna, which fits the 'other' category and 'feature_question' sub-category."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 954,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"other\",\n  \"sub_category\": \"feature_question\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"low\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is asking a general usage question about whether the band can be worn in a sauna, which fits the 'other' category and 'feature_question' sub-category.\"\n}"
+      ]
+    },
+    "TC07": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "wont_power_on",
+        "sentiment": "neutral",
+        "urgency": "high",
+        "extracted_facts": {
+          "device_status": "completely dead",
+          "steps_tried": "charged overnight and holding the reset button"
+        },
+        "member_already_troubleshot": true,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states their device won't power on despite attempting troubleshooting steps, and explicitly requests a replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1129,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"wont_power_on\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"device_status\": \"completely dead\",\n    \"steps_tried\": \"charged overnight and holding the reset button\"\n  },\n  \"member_already_troubleshot\": true,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states their device won't power on despite attempting troubleshooting steps, and explicitly requests a replacement.\"\n}"
+      ]
+    },
+    "TC08": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "sensor_failure",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "steps_tried": "reset, re-paired"
+        },
+        "member_already_troubleshot": true,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states the heart-rate sensor is dead and explicitly mentions trying standard troubleshooting steps before asking for a replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1015,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"sensor_failure\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"steps_tried\": \"reset, re-paired\"\n  },\n  \"member_already_troubleshot\": true,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states the heart-rate sensor is dead and explicitly mentions trying standard troubleshooting steps before asking for a replacement.\"\n}"
+      ]
+    },
+    "TC09": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "strap_broken",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member reports a broken strap at the pin, which is a physical hardware breakage requiring a warranty replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 982,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"strap_broken\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member reports a broken strap at the pin, which is a physical hardware breakage requiring a warranty replacement.\"\n}"
+      ]
+    },
+    "TC10": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "wont_power_on",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states the device won't power on and explicitly requests a replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 790,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"wont_power_on\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states the device won't power on and explicitly requests a replacement.\"\n}"
+      ]
+    },
+    "TC11": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "sensor_failure",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "band_number": "third band",
+          "issue": "sensor has failed again"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is reporting a repeated sensor failure on their third device and is seeking a replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 972,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"sensor_failure\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"band_number\": \"third band\",\n    \"issue\": \"sensor has failed again\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is reporting a repeated sensor failure on their third device and is seeking a replacement.\"\n}"
+      ]
+    },
+    "TC12": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "cracked_casing",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "damage_type": "cracked screen"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states that the screen is cracked and is requesting a new device, which clearly indicates a hardware damage issue requiring a warranty replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 963,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"cracked_casing\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"damage_type\": \"cracked screen\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states that the screen is cracked and is requesting a new device, which clearly indicates a hardware damage issue requiring a warranty replacement.\"\n}"
+      ]
+    },
+    "TC13": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "changed_mind",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "language": "German"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.99,
+        "reasoning_summary": "The member states in German that they want to return the PulseBand simply because they don't like it, which falls clearly under return_remorse."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 856,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"changed_mind\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"language\": \"German\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.99,\n  \"reasoning_summary\": \"The member states in German that they want to return the PulseBand simply because they don't like it, which falls clearly under return_remorse.\"\n}"
+      ]
+    },
+    "TC14": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "changed_mind",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.99,
+        "reasoning_summary": "The member explicitly stated they changed their mind about the band and are asking about returning it."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1190,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"changed_mind\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.99,\n  \"reasoning_summary\": \"The member explicitly stated they changed their mind about the band and are asking about returning it.\"\n}"
+      ]
+    },
+    "TC15": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "changed_mind",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "ownership_duration": "about a month"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.98,
+        "reasoning_summary": "The member explicitly stated they changed their mind after having the device for about a month and want a refund."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1104,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"changed_mind\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"ownership_duration\": \"about a month\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.98,\n  \"reasoning_summary\": \"The member explicitly stated they changed their mind after having the device for about a month and want a refund.\"\n}"
+      ]
+    },
+    "TC16": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "wrong_size",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member wants to return the band because it is the wrong size, which is classified as a return_remorse issue."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 967,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"wrong_size\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member wants to return the band because it is the wrong size, which is classified as a return_remorse issue.\"\n}"
+      ]
+    },
+    "TC17": {
+      "classification": {
+        "category": "shipping_delivery",
+        "sub_category": "tracking_stuck",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "tracking_duration": "two weeks"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states their order never arrived and tracking has been stuck for two weeks, which is a clear shipping and delivery issue."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1013,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"shipping_delivery\",\n  \"sub_category\": \"tracking_stuck\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"tracking_duration\": \"two weeks\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states their order never arrived and tracking has been stuck for two weeks, which is a clear shipping and delivery issue.\"\n}"
+      ]
+    },
+    "TC18": {
+      "classification": {
+        "category": "shipping_delivery",
+        "sub_category": "not_delivered",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "duration": "about a week"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is inquiring about the location and status of their delayed order after a week of waiting."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1280,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"shipping_delivery\",\n  \"sub_category\": \"not_delivered\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"duration\": \"about a week\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is inquiring about the location and status of their delayed order after a week of waiting.\"\n}"
+      ]
+    },
+    "TC19": {
+      "classification": {
+        "category": "shipping_delivery",
+        "sub_category": "not_delivered",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is inquiring about a package that has not arrived yet, which clearly falls under shipping and delivery."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 899,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"shipping_delivery\",\n  \"sub_category\": \"not_delivered\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is inquiring about a package that has not arrived yet, which clearly falls under shipping and delivery.\"\n}"
+      ]
+    },
+    "TC20": {
+      "classification": {
+        "category": "shipping_delivery",
+        "sub_category": "delivered_not_received",
+        "sentiment": "neutral",
+        "urgency": "high",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states that tracking shows their package was delivered, but they cannot find it. This clearly falls under shipping and delivery issues."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 905,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"shipping_delivery\",\n  \"sub_category\": \"delivered_not_received\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states that tracking shows their package was delivered, but they cannot find it. This clearly falls under shipping and delivery issues.\"\n}"
+      ]
+    },
+    "TC21": {
+      "classification": {
+        "category": "billing_membership",
+        "sub_category": "double_charge",
+        "sentiment": "neutral",
+        "urgency": "high",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member believes they were charged twice for their monthly membership, which is a billing and membership issue."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1494,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"billing_membership\",\n  \"sub_category\": \"double_charge\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member believes they were charged twice for their monthly membership, which is a billing and membership issue.\"\n}"
+      ]
+    },
+    "TC22": {
+      "classification": {
+        "category": "billing_membership",
+        "sub_category": "double_charge",
+        "sentiment": "angry",
+        "urgency": "high",
+        "extracted_facts": {
+          "issue": "charged twice"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.99,
+        "reasoning_summary": "The member is complaining about being charged twice and threatening a bank dispute, which clearly falls under billing membership issues with high urgency and an angry sentiment."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 957,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"billing_membership\",\n  \"sub_category\": \"double_charge\",\n  \"sentiment\": \"angry\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"issue\": \"charged twice\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.99,\n  \"reasoning_summary\": \"The member is complaining about being charged twice and threatening a bank dispute, which clearly falls under billing membership issues with high urgency and an angry sentiment.\"\n}"
+      ]
+    },
+    "TC23": {
+      "classification": {
+        "category": "billing_membership",
+        "sub_category": "cancel_membership",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 1.0,
+        "reasoning_summary": "The member is directly asking how to cancel their membership, which falls under billing and membership management."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 911,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"billing_membership\",\n  \"sub_category\": \"cancel_membership\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 1.0,\n  \"reasoning_summary\": \"The member is directly asking how to cancel their membership, which falls under billing and membership management.\"\n}"
+      ]
+    },
+    "TC24": {
+      "classification": {
+        "category": "safety_concern",
+        "sub_category": "injury",
+        "sentiment": "frustrated",
+        "urgency": "urgent",
+        "extracted_facts": {
+          "issue_description": "burn mark on wrist near sensor"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 1.0,
+        "reasoning_summary": "The member reported a burn mark on their wrist from the sensor. Any mention of injury or burns must be classified as a safety_concern with urgent priority."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 974,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"safety_concern\",\n  \"sub_category\": \"injury\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"urgent\",\n  \"extracted_facts\": {\n    \"issue_description\": \"burn mark on wrist near sensor\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 1.0,\n  \"reasoning_summary\": \"The member reported a burn mark on their wrist from the sensor. Any mention of injury or burns must be classified as a safety_concern with urgent priority.\"\n}"
+      ]
+    },
+    "TC25": {
+      "classification": {
+        "category": "safety_concern",
+        "sub_category": "skin_irritation",
+        "sentiment": "frustrated",
+        "urgency": "urgent",
+        "extracted_facts": {
+          "symptom": "itchy and red skin",
+          "affected_part": "strap",
+          "secondary_issue": "sync"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "Safety concerns always take precedence over other categories. The member reported skin irritation from the strap, along with a secondary syncing issue."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1203,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"safety_concern\",\n  \"sub_category\": \"skin_irritation\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"urgent\",\n  \"extracted_facts\": {\n    \"symptom\": \"itchy and red skin\",\n    \"affected_part\": \"strap\",\n    \"secondary_issue\": \"sync\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"Safety concerns always take precedence over other categories. The member reported skin irritation from the strap, along with a secondary syncing issue.\"\n}"
+      ]
+    },
+    "TC26": {
+      "classification": {
+        "category": "safety_concern",
+        "sub_category": "overheating",
+        "sentiment": "frustrated",
+        "urgency": "urgent",
+        "extracted_facts": {
+          "issue": "band got very hot while charging"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 1.0,
+        "reasoning_summary": "The member reported that the device became dangerously hot while charging. Safety concerns always override all other categories and are classified as urgent."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1019,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"safety_concern\",\n  \"sub_category\": \"overheating\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"urgent\",\n  \"extracted_facts\": {\n    \"issue\": \"band got very hot while charging\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 1.0,\n  \"reasoning_summary\": \"The member reported that the device became dangerously hot while charging. Safety concerns always override all other categories and are classified as urgent.\"\n}"
+      ]
+    },
+    "TC27": {
+      "classification": {
+        "category": "other",
+        "sub_category": "feature_question",
+        "sentiment": "neutral",
+        "urgency": "low",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 1.0,
+        "reasoning_summary": "The member is asking a simple pre-purchase or general question about product features."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 893,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"other\",\n  \"sub_category\": \"feature_question\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"low\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 1.0,\n  \"reasoning_summary\": \"The member is asking a simple pre-purchase or general question about product features.\"\n}"
+      ]
+    },
+    "TC28": {
+      "classification": {
+        "category": "other",
+        "sub_category": "feedback",
+        "sentiment": "positive",
+        "urgency": "low",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.98,
+        "reasoning_summary": "The member is providing positive feedback about a feature, which fits the other category and feedback sub_category."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1047,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"other\",\n  \"sub_category\": \"feedback\",\n  \"sentiment\": \"positive\",\n  \"urgency\": \"low\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.98,\n  \"reasoning_summary\": \"The member is providing positive feedback about a feature, which fits the other category and feedback sub_category.\"\n}"
+      ]
+    },
+    "TC29": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "changed_mind",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "secondary_issue": "app crashes"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member states they want to return the band primarily because they don't like wearing it, indicating a change of mind rather than a defect, with a secondary mention of app crashes."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1088,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"changed_mind\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"secondary_issue\": \"app crashes\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member states they want to return the band primarily because they don't like wearing it, indicating a change of mind rather than a defect, with a secondary mention of app crashes.\"\n}"
+      ]
+    },
+    "TC30": {
+      "classification": {
+        "category": "shipping_delivery",
+        "sub_category": "tracking_stuck",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "language": "Spanish",
+          "issue": "order never arrived and tracking has been stuck for weeks"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is reporting that their order never arrived and tracking is stuck, which clearly falls under shipping and delivery issues."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 924,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"shipping_delivery\",\n  \"sub_category\": \"tracking_stuck\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"language\": \"Spanish\",\n    \"issue\": \"order never arrived and tracking has been stuck for weeks\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is reporting that their order never arrived and tracking is stuck, which clearly falls under shipping and delivery issues.\"\n}"
+      ]
+    }
+  }
+}

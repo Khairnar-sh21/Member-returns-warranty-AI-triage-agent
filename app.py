@@ -10,7 +10,7 @@ import logging
 import streamlit as st
 
 from triage.config import RulesConfigError, get_rules
-from ui import how_tab, session, sidebar, triage_tab
+from ui import dashboard_tab, eval_tab, how_tab, session, sidebar, triage_tab
 from ui.components import banner
 from ui.settings import AUTHOR, LINKEDIN_URL
 from ui.styles import inject_css
@@ -34,11 +34,6 @@ def _safe(render, name: str) -> None:
         st.error(f"Sorry, the {name} view hit an unexpected problem. Refresh the page to try again.")
 
 
-def _coming_soon(title: str, text: str) -> None:
-    st.markdown(f"### {title}")
-    st.info(text)
-
-
 def main() -> None:
     inject_css()
     try:
@@ -55,11 +50,9 @@ def main() -> None:
     with triage:
         _safe(triage_tab.render, "Triage")
     with ops:
-        _coming_soon("Ops dashboard", "Coming in Phase 6: automation rate, escalation rate, "
-                     "cases by category and region, average confidence, and RMAs by warehouse.")
+        _safe(dashboard_tab.render, "Ops dashboard")
     with evaluation:
-        _coming_soon("Evaluation", "Coming in Phase 6: 30 labeled scenarios with accuracy, "
-                     "per-category accuracy, decision accuracy, and a confusion matrix.")
+        _safe(eval_tab.render, "Evaluation")
     with how:
         _safe(how_tab.render, "How it works")
 

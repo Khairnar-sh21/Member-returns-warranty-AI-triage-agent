@@ -1,0 +1,49 @@
+{
+  "n_runs": 3,
+  "n_cases": 30,
+  "provider": "gemini",
+  "models": [
+    "gemini-3.5-flash-lite"
+  ],
+  "prompt_versions": [
+    "classifier_v1"
+  ],
+  "policy_versions": [
+    "2026.11-demo"
+  ],
+  "run_dates": [
+    "2026-11-08T17:40:03+00:00",
+    "2026-11-08T17:44:08+00:00",
+    "2026-11-08T17:48:14+00:00"
+  ],
+  "category_accuracy": {
+    "mean": 1.0,
+    "min": 1.0,
+    "max": 1.0,
+    "runs": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "decision_accuracy": {
+    "mean": 1.0,
+    "min": 1.0,
+    "max": 1.0,
+    "runs": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "per_category_accuracy": {
+    "billing_membership": 1.0,
+    "other": 1.0,
+    "return_remorse": 1.0,
+    "safety_concern": 1.0,
+    "shipping_delivery": 1.0,
+    "troubleshooting": 1.0,
+    "warranty_replacement": 1.0
+  },
+  "fallbacks": 0
+}
