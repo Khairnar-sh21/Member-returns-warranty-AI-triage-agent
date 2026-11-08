@@ -72,6 +72,22 @@ def find_safety_keywords(message: str, keywords: list[str]) -> list[str]:
     return hits
 
 
+def warranty_expiry(order: Order, region: str, rules: Rules) -> date:
+    return order.delivered_date + relativedelta(months=rules.warranty_months_for(region))
+
+
+def recent_replacements(ctx: MemberContext, rules: Rules, today: date) -> tuple[int, date]:
+    """Warranty replacements shipped in the rolling window, and when that window starts."""
+    lim = rules.warranty.replacement_limit
+    window_start = today - relativedelta(months=lim.rolling_window_months)
+    used = sum(
+        1 for c in ctx.prior_cases
+        if c.category == "warranty_replacement" and c.outcome == "replacement_shipped"
+        and window_start < c.case_date <= today
+    )
+    return used, window_start
+
+
 def _fmt(d: date) -> str:
     return d.strftime("%b %d, %Y").replace(" 0", " ")
 
@@ -260,7 +276,7 @@ def _warranty(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _
                         "Agent to locate the member's device order before any warranty decision.")
 
     months = rules.warranty_months_for(m.region)
-    expires = order.delivered_date + relativedelta(months=months)
+    expires = warranty_expiry(order, m.region, rules)
     age_days = (today - order.delivered_date).days
     facts = {
         "order_id": order.order_id,
@@ -291,12 +307,7 @@ def _warranty(ctx: MemberContext, rules: Rules, today: date, trace: _Trace) -> _
     )
 
     lim = w.replacement_limit
-    window_start = today - relativedelta(months=lim.rolling_window_months)
-    used = sum(
-        1 for c in ctx.prior_cases
-        if c.category == "warranty_replacement" and c.outcome == "replacement_shipped"
-        and window_start < c.case_date <= today
-    )
+    used, window_start = recent_replacements(ctx, rules, today)
     under_limit = trace.add(
         "replacement_limit", "policy",
         f"Replacement limit ({lim.max_replacements} per {lim.rolling_window_months} months)",

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "wont_charge",
+    "label": "Band won't charge",
+    "member_id": "M0001",
+    "message": "My band stopped charging after about 5 months. I've already tried a different cable and a reset. Really frustrating since I use it every day."
+  },
+  {
+    "id": "return_germany",
+    "label": "Return request – Germany",
+    "member_id": "M0002",
+    "message": "Hi, the band arrived 12 days ago but it's not for me. Can I send it back for a refund? I'm in Berlin."
+  },
+  {
+    "id": "charged_twice",
+    "label": "Charged twice",
+    "member_id": "M0011",
+    "message": "I was billed twice on 1 November for my membership. Please refund the duplicate charge."
+  },
+  {
+    "id": "package_missing",
+    "label": "Package never arrived",
+    "member_id": "M0009",
+    "message": "I ordered my band almost three weeks ago and the tracking hasn't moved in days. Still nothing at my door."
+  },
+  {
+    "id": "skin_irritation",
+    "label": "Skin irritation",
+    "member_id": "M0014",
+    "message": "I've had a red, itchy rash under the band for a week and it's getting worse. Should I stop wearing it?"
+  },
+  {
+    "id": "angry_repeat",
+    "label": "Angry repeat issue",
+    "member_id": "M0008",
+    "message": "This is the THIRD band that's died on me this year. I'm done troubleshooting. Fix it or cancel my membership."
+  },
+  {
+    "id": "return_day_31",
+    "label": "Return on day 31",
+    "member_id": "M0004",
+    "message": "Can I still return my band? It arrived about a month ago and I just don't wear it."
+  },
+  {
+    "id": "clasp_past_due",
+    "label": "Broken clasp, payment overdue",
+    "member_id": "M0007",
+    "message": "The clasp on my band snapped off yesterday. Can I get a replacement?"
+  },
+  {
+    "id": "uk_sync",
+    "label": "Sync issue – UK, 18 months",
+    "member_id": "M0005",
+    "message": "My band hasn't synced with the app for a week. I've reinstalled the app and re-paired it twice, still nothing."
+  },
+  {
+    "id": "vague",
+    "label": "Vague message",
+    "member_id": "M0006",
+    "message": "Something's off with my band lately. Can someone look into it?"
+  }
+]

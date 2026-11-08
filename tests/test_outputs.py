@@ -69,6 +69,24 @@ def test_ids_are_stable_for_the_same_request(run):
     assert re.fullmatch(r"CS-\d{6}-[0-9A-F]{6}", a.case.case_id)
 
 
+# --- Outcome tiers ----------------------------------------------------------
+
+
+@pytest.mark.parametrize("member_id, category, kwargs, expected", [
+    ("M0002", "return_remorse", {}, "automated"),
+    ("M0002", "return_remorse", {"confidence": 0.5}, "needs_review"),
+    ("M0008", "warranty_replacement", {}, "needs_review"),          # replacement limit
+    ("M0001", "shipping_delivery", {}, "needs_review"),             # carrier investigation
+    ("M0014", "safety_concern", {}, "escalated"),
+    ("M0012", "warranty_replacement", {}, "escalated"),             # possible fraud
+    ("M0011", "billing_membership", {"sentiment": "angry"}, "escalated"),
+])
+def test_outcome_tier(run, member_id, category, kwargs, expected):
+    r = run(member_id, category, "sensor", **kwargs)
+    assert r.case.outcome == expected
+    assert r.case.ai_confidence == r.classification.classification.confidence
+
+
 # --- Replies match the decision ---------------------------------------------
 
 

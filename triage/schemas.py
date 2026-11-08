@@ -11,6 +11,11 @@ from triage.config import Category, Priority, Warehouse
 
 Sentiment = Literal["positive", "neutral", "frustrated", "angry"]
 
+# automated:    rules resolved it, no person needed
+# needs_review: routine human check (low confidence, replacement limit, ...)
+# escalated:    sensitive — safety, possible fraud, angry high-value member
+Outcome = Literal["automated", "needs_review", "escalated"]
+
 DecisionCode = Literal[
     "send_troubleshooting",
     "approve_warranty_replacement",
@@ -109,6 +114,8 @@ class SupportCase(BaseModel):
     next_action: str
     assigned_queue: str
     automated: bool
+    outcome: Outcome
+    ai_confidence: float
     rma_id: str | None
     policy_version: str
     created_at: datetime

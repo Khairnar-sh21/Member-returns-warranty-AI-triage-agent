@@ -21,6 +21,7 @@ from triage.schemas import (
     Decision,
     LLMClassification,
     MemberReply,
+    Outcome,
     RMAOrder,
     RuleResult,
     SupportCase,
@@ -84,6 +85,17 @@ COMMITMENT_PATTERNS = [
     r"\bRMA-",
 ]
 
+ESCALATION_REASONS = {"safety_ai_category", "safety_keyword", "possible_fraud", "angry_high_value"}
+
+
+def outcome_tier(decision: Decision) -> Outcome:
+    if decision.automated:
+        return "automated"
+    if ESCALATION_REASONS & set(decision.escalation_reasons):
+        return "escalated"
+    return "needs_review"
+
+
 GENERIC_HOLDING_REPLY = (
     "Thanks for getting in touch. A member of our support team is reviewing your request "
     "personally and will get back to you soon."
@@ -135,6 +147,8 @@ def build_case(
         next_action=decision.next_action,
         assigned_queue=decision.assigned_queue,
         automated=decision.automated,
+        outcome=outcome_tier(decision),
+        ai_confidence=classification.confidence,
         rma_id=rma_id,
         policy_version=decision.policy_version,
         created_at=created_at or datetime.now(timezone.utc).replace(microsecond=0),

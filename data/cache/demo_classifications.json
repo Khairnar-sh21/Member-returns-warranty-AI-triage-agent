@@ -1,0 +1,280 @@
+{
+  "generated_at": "2026-11-06T15:25:14+00:00",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "prompt_version": "classifier_v1",
+  "items": {
+    "2b33860071b4d0d7": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "charging",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "issue_duration": "5 months",
+          "steps_tried": "tried a different cable and a reset"
+        },
+        "member_already_troubleshot": true,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is experiencing a charging issue that persists after trying standard troubleshooting steps, and since it is a hardware-related charging failure after 5 months, it falls under warranty replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1223,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"charging\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"issue_duration\": \"5 months\",\n    \"steps_tried\": \"tried a different cable and a reset\"\n  },\n  \"member_already_troubleshot\": true,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is experiencing a charging issue that persists after trying standard troubleshooting steps, and since it is a hardware-related charging failure after 5 months, it falls under warranty replacement.\"\n}"
+      ]
+    },
+    "bb203cc079d82d80": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "changed_mind",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "arrival_time": "12 days ago",
+          "location": "Berlin",
+          "country_mentioned": "Germany",
+          "language": "English"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.98,
+        "reasoning_summary": "The member received the band 12 days ago, decided it is not for them, and is requesting a return and refund, which falls strictly under return_remorse."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1197,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"changed_mind\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"arrival_time\": \"12 days ago\",\n    \"location\": \"Berlin\",\n    \"country_mentioned\": \"Germany\",\n    \"language\": \"English\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.98,\n  \"reasoning_summary\": \"The member received the band 12 days ago, decided it is not for them, and is requesting a return and refund, which falls strictly under return_remorse.\"\n}"
+      ]
+    },
+    "c373d9e8149e50c4": {
+      "classification": {
+        "category": "billing_membership",
+        "sub_category": "double_charge",
+        "sentiment": "neutral",
+        "urgency": "high",
+        "extracted_facts": {
+          "date_of_charge": "1 November",
+          "issue_type": "duplicate charge",
+          "request": "refund"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.99,
+        "reasoning_summary": "The member is reporting a duplicate membership charge on November 1st and is requesting a refund for that extra charge."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1283,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"billing_membership\",\n  \"sub_category\": \"double_charge\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"date_of_charge\": \"1 November\",\n    \"issue_type\": \"duplicate charge\",\n    \"request\": \"refund\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.99,\n  \"reasoning_summary\": \"The member is reporting a duplicate membership charge on November 1st and is requesting a refund for that extra charge.\"\n}"
+      ]
+    },
+    "04366757611b84f7": {
+      "classification": {
+        "category": "shipping_delivery",
+        "sub_category": "tracking_stuck",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "order_duration": "almost three weeks",
+          "issue_description": "tracking hasn't moved in days, nothing at door"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is inquiring about a delayed order where tracking has not updated and the package has not arrived after three weeks."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1220,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"shipping_delivery\",\n  \"sub_category\": \"tracking_stuck\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"order_duration\": \"almost three weeks\",\n    \"issue_description\": \"tracking hasn't moved in days, nothing at door\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is inquiring about a delayed order where tracking has not updated and the package has not arrived after three weeks.\"\n}"
+      ]
+    },
+    "682962a20b1395c0": {
+      "classification": {
+        "category": "safety_concern",
+        "sub_category": "skin_irritation",
+        "sentiment": "frustrated",
+        "urgency": "urgent",
+        "extracted_facts": {
+          "issue_duration": "1 week",
+          "symptoms": "red, itchy rash",
+          "location": "under the band",
+          "progression": "getting worse"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 1.0,
+        "reasoning_summary": "The member is reporting a skin irritation and rash under the band, which triggers the safety_concern category and urgent priority regardless of any other context."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1696,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"safety_concern\",\n  \"sub_category\": \"skin_irritation\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"urgent\",\n  \"extracted_facts\": {\n    \"issue_duration\": \"1 week\",\n    \"symptoms\": \"red, itchy rash\",\n    \"location\": \"under the band\",\n    \"progression\": \"getting worse\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 1.0,\n  \"reasoning_summary\": \"The member is reporting a skin irritation and rash under the band, which triggers the safety_concern category and urgent priority regardless of any other context.\"\n}"
+      ]
+    },
+    "a7b6f8c9c6f1da86": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "wont_power_on",
+        "sentiment": "angry",
+        "urgency": "high",
+        "extracted_facts": {
+          "device_history": "third band died this year",
+          "secondary_issue": "cancel_membership"
+        },
+        "member_already_troubleshot": true,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is experiencing hardware failure after stating they are done troubleshooting multiple devices, and threatens to cancel their membership if not resolved."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1288,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"wont_power_on\",\n  \"sentiment\": \"angry\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"device_history\": \"third band died this year\",\n    \"secondary_issue\": \"cancel_membership\"\n  },\n  \"member_already_troubleshot\": true,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is experiencing hardware failure after stating they are done troubleshooting multiple devices, and threatens to cancel their membership if not resolved.\"\n}"
+      ]
+    },
+    "d35681dea52bdc2e": {
+      "classification": {
+        "category": "return_remorse",
+        "sub_category": "changed_mind",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "arrival_time": "about a month ago",
+          "reason": "just don't wear it"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is asking to return their band because they no longer wear it, which fits return remorse for a change of mind."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1184,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"return_remorse\",\n  \"sub_category\": \"changed_mind\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"arrival_time\": \"about a month ago\",\n    \"reason\": \"just don't wear it\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is asking to return their band because they no longer wear it, which fits return remorse for a change of mind.\"\n}"
+      ]
+    },
+    "696fe60e4ad47491": {
+      "classification": {
+        "category": "warranty_replacement",
+        "sub_category": "broken_clasp",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {
+          "issue_duration": "yesterday",
+          "component_broken": "clasp"
+        },
+        "member_already_troubleshot": false,
+        "confidence": 0.95,
+        "reasoning_summary": "The member reports a broken hardware component (clasp) and explicitly asks for a replacement."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1086,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"warranty_replacement\",\n  \"sub_category\": \"broken_clasp\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {\n    \"issue_duration\": \"yesterday\",\n    \"component_broken\": \"clasp\"\n  },\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member reports a broken hardware component (clasp) and explicitly asks for a replacement.\"\n}"
+      ]
+    },
+    "539b24d95443e2eb": {
+      "classification": {
+        "category": "troubleshooting",
+        "sub_category": "sync",
+        "sentiment": "frustrated",
+        "urgency": "high",
+        "extracted_facts": {
+          "issue_duration": "a week",
+          "steps_tried": "reinstalled the app, re-paired twice"
+        },
+        "member_already_troubleshot": true,
+        "confidence": 0.95,
+        "reasoning_summary": "The member is experiencing a syncing issue that persists despite trying standard troubleshooting steps."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1038,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"troubleshooting\",\n  \"sub_category\": \"sync\",\n  \"sentiment\": \"frustrated\",\n  \"urgency\": \"high\",\n  \"extracted_facts\": {\n    \"issue_duration\": \"a week\",\n    \"steps_tried\": \"reinstalled the app, re-paired twice\"\n  },\n  \"member_already_troubleshot\": true,\n  \"confidence\": 0.95,\n  \"reasoning_summary\": \"The member is experiencing a syncing issue that persists despite trying standard troubleshooting steps.\"\n}"
+      ]
+    },
+    "25beae6610d4c465": {
+      "classification": {
+        "category": "troubleshooting",
+        "sub_category": "general",
+        "sentiment": "neutral",
+        "urgency": "normal",
+        "extracted_facts": {},
+        "member_already_troubleshot": false,
+        "confidence": 0.65,
+        "reasoning_summary": "The member states something is off with their band and wants help, which points to troubleshooting, though the message is very vague."
+      },
+      "status": "ok",
+      "attempts": 1,
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "prompt_version": "classifier_v1",
+      "latency_ms": 1029,
+      "error_kind": null,
+      "error": null,
+      "error_detail": null,
+      "raw_responses": [
+        "{\n  \"category\": \"troubleshooting\",\n  \"sub_category\": \"general\",\n  \"sentiment\": \"neutral\",\n  \"urgency\": \"normal\",\n  \"extracted_facts\": {},\n  \"member_already_troubleshot\": false,\n  \"confidence\": 0.65,\n  \"reasoning_summary\": \"The member states something is off with their band and wants help, which points to troubleshooting, though the message is very vague.\"\n}"
+      ]
+    }
+  }
+}
