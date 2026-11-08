@@ -1,7 +1,7 @@
 """App-level settings (not business policy — that lives in rules.yaml)."""
 
 AUTHOR = "Shubham Khairnar"
-LINKEDIN_URL = "https://www.linkedin.com/in/shubham-khairnar"
+LINKEDIN_URL = "https://www.linkedin.com/in/shubham-khairnar/"
 GITHUB_URL = "https://github.com/Khairnar-sh21/Member-returns-warranty-AI-triage-agent"
 CASE_STUDY_URL = ""  # optional write-up link; hidden when empty
 

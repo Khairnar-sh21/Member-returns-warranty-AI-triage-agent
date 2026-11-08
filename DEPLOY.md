@@ -9,7 +9,7 @@ This is a click-by-click guide for you. The public link runs in **Demo mode** wi
 ## Before you click Deploy
 
 1. The GitHub repo must be **public**: [Khairnar-sh21/Member-returns-warranty-AI-triage-agent](https://github.com/Khairnar-sh21/Member-returns-warranty-AI-triage-agent). Streamlit Community Cloud reads it from there.
-2. LinkedIn already points at [linkedin.com/in/shubham-khairnar](https://www.linkedin.com/in/shubham-khairnar) in `ui/settings.py` and `README.md`. Change those two if your public URL is different.
+2. LinkedIn already points at [linkedin.com/in/shubham-khairnar](https://www.linkedin.com/in/shubham-khairnar/) in `ui/settings.py` and `README.md`. Change those two if your public URL is different.
 
 ---
 
