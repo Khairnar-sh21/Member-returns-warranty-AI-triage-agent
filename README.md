@@ -3,7 +3,7 @@
 > **Unofficial concept · 100% synthetic data · built by Shubham Khairnar.**
 > "PulseBand" is a fictional wearable-membership company. No real company, customer, or policy data is used.
 
-**Live demo:** [add your Streamlit link here](#) · **2-minute walkthrough:** [add your Loom link here](#) · **LinkedIn:** [Shubham Khairnar](https://www.linkedin.com/in/shubham-khairnar/)
+**Live demo:** [https://warranty-triage-agent.streamlit.app/](https://warranty-triage-agent.streamlit.app/) · **2-minute walkthrough:** [add your Loom link here](#) · **LinkedIn:** [Shubham Khairnar](https://www.linkedin.com/in/shubham-khairnar/)
 
 The demo opens in **Demo mode**: it replays saved AI results for 10 sample scenarios, so it always works and costs nothing. Switch to **Live mode** in the sidebar to triage your own message (limited to 15 per visit).
 
